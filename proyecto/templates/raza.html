@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+	<<div class="cuadro">
+
+		<h1>RAZA</h1>
+
+		<table>
+			
+			<tr>
+				<th>Nombre</th>
+				
+			</tr>
+
+			{% for i in lista %}
+			<tr>
+				<td><a href="{% url 'vista_ver_raza'  id_raza=i.id %}">{{i.nombre}}</a></td>
+				
+			</tr>
+			{% endfor %}
+		</table>
+    </div>
+{% endblock %}

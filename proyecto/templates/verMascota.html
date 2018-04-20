@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+
+	<div class="cuadro">
+		<p><b>NOMBRE:	</b>{{m.nombre}}</p>
+		<p><b>PESO:	</b>{{m.peso}}</p>
+		<p><b>SEXO:	</b>{{m.sexo}}</p>
+		<p><b>EDAD:	</b>{{m.edad}}</p>
+			
+			<button><a href="{% url 'vista_editar_mascota'   id_mascota=m.id %}">Editar</a></button>
+			<button><a href="{% url 'vista_eliminar_mascota' id_mascota=m.id %}">Eliminar</a></button>
+	</div>
+
+	
+{% endblock %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html>
+	<head>
+		{% block titulo %}
+		{% endblock %}
+
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+	</head>
+	<body background="/static/img/fondos.jpg" class="container">
+	<p align="center" id="mititulo">MIS ANIMALES EN FAMILIA</p>
+	
+		<nav class="navegador" >
+			<ul class="menu">
+
+				<li><a href="{% url 'vista_base' %}">Inicio</a></li>
+				<li><a href="">Agregar</a>
+
+					<ul class="submenu">
+						<li><a href="{% url 'vista_lista_mascota' %}">Mascota</a></li>
+						<li><a href="{% url 'vista_lista_cliente' %}">Cliente</a></li>
+						<li><a href="{% url 'vista_lista_raza' %}">Raza</a></li>
+						<li><a href="{% url 'vista_lista_servicio' %}">Servicio</a></li>
+					</ul>
+					<li><a href="{% url 'mascota' %}">Mascota</a></li>
+					<li><a href="{% url 'cliente' %}">Cliente</a></li>
+					<li><a href="{% url 'raza' %}">Raza</a></li>
+					<li><a href="{% url 'servicio' %}">Servicio</a></li>	
+					<li><a href="{% url 'vista_logout' %}">Cerrar</a></li>
+
+				{{ user.username }}
+				</li>
+			</ul>
+		</nav>
+
+		{% block contenido %}
+		<div id="bienvenido">
+			<h2>BIENVENIDO</h2>
+			<br>
+			<p>Nuestras mascotas son seres especiales que nos brindan lo mejor de sí mismos para alegrar nuestras vidas. Demostrémosle siempre nuestro amor y nuestra gratitud.</p>
+		</div>
+		{% endblock %}
+
+
+	</body>
+
+</html>

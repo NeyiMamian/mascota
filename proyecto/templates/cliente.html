@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+	<div class="cuadro">
+
+		<h1>CLIENTE</h1>
+
+		<table>
+			
+			<tr>
+				<th>Nombre</th>
+				<th>Direccion</th>
+				<th>Telefono</th>
+				<th>Email</th>
+			</tr>
+
+			{% for i in lista %}
+			<tr>
+				<td><a href="{% url 'vista_ver_cliente' id_cliente=i.id %}">{{i.nombre}}</a></td>
+				<td>{{i.direccion}}</td>
+				<td>{{i.telefono}}</td>
+				<td>{{i.email}}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</div>
+{% endblock %}

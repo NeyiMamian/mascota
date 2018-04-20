@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+	<div class="cuadro">
+
+		<h1>MASCOTA</h1>
+
+		<table>
+			
+			<tr>
+				<th>Nombre</th>
+				<th>Peso</th>
+				<th>Sexo</th>
+				<th>Edad</th>
+			</tr>
+
+			{% for i in lista %}
+			<tr>
+				<td><a href="{% url 'vista_ver_mascota' id_mascota=i.id %}"> {{i.nombre}}</a></td>
+				<td>{{i.peso}}</td>
+				<td>{{i.sexo}}</td>
+				<td>{{i.edad}}</td>
+
+			</tr>
+			{% endfor %}
+		</table>
+	</div>	
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+
+	<div class="cuadro">
+	
+		<p><b>NOMBRE:	</b>{{s.nombre}}</p>
+		<p><b>COSTO:	</b>{{s.costo}}</p>
+		
+			
+			<button><a href="{% url 'vista_editar_servicio' id_servicio=s.id %}">Editar</a></button>
+			<button><a href="{%url 'vista_eliminar_servicio' id_servicio=s.id %}">Eliminar</a></button>
+	</div>
+
+	
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block titulo %}
+
+{%endblock %}
+{% block contenido %}
+
+	<div class="cuadro">
+		<p><b>NOMBRE:	</b>{{c.nombre}}</p>
+		<p><b>DIRECCION:	</b>{{c.direccion}}</p>
+		<p><b>TELEFONO:	</b>{{c.telefono}}</p>
+		<p><b>EMAIL:	</b>{{c.email}}</p>
+			
+		<button><a href="{%url 'editar_cliente' id_cliente=c.id %}">Editar</a></button>
+		<button><a href="{%url 'vista_eliminar_cliente' id_cliente=c.id %}">Eliminar</a></button>
+	</div>
+
+
+
+	
+{% endblock %}

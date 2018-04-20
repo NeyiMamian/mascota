@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		{% block titulo %}
+
+		{% endblock %}
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/css/bootstrap.min.css' %}"/>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	</head>
+
+	<body background="/static/img/fondo.jpg">
+	<div class="inicio"> 
+
+		<form action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{ formulario.as_p}}
+
+			<input class="btn btn-default" type="submit" value="registrar" >
+			<a class="btn btn-default" href="{% url 'vista_logout' %}">Regresar</a>
+
+			
+		</form>
+
+	<h2>{{msj}}</h2>
+	</div>
+
+	</body>
+		
+</html>
